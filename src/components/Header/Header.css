@@ -1,0 +1,91 @@
+.header{
+  padding: 25px 40px;
+} 
+
+.header__logo-box {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-column-gap: 10px;
+}
+
+.header__title {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  height: 34px;
+  font-family: 'Yantramanav', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 34px;
+  color: #030303;
+  margin: 0;
+}
+
+.header__title::after {
+  content: "Документы";
+  position: absolute;
+  bottom: -20px;
+  left: 2px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 88.1%;
+  color: #DA125A;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  grid-column-gap: 50px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: -0.035em;
+  color: #000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__item {
+  cursor: pointer;
+}
+
+.header__button-box {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  justify-content: space-between;
+  grid-column-gap: 20px;
+}
+
+.header__phone {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  color: #000;
+  text-decoration: none;
+}
+
+.header__lang-current {
+  width: 47px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.header__lang-image {
+  margin-right: 5px;
+}
+
+.header__lang-box {
+  position: absolute;
+}
+
+.header__lang-box .MuiPopover-paper {
+  margin-top: 15px;
+}

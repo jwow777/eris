@@ -1,0 +1,50 @@
+.policy__title-box {
+  display: grid;
+  grid-template-columns: auto max-content;
+  padding: 16px 24px;
+}
+
+.policy__title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.035em;
+  margin: 0 0 20px;
+}
+
+.policy__list {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.035em;
+  color: #000000;
+  list-style: none;
+  counter-reset: li;
+  margin: 0;
+  padding: 0; 
+}
+
+.policy__list_down {
+  margin: 10px 0;
+}
+
+.policy__item:before {
+  counter-increment: li;
+  content: counters(li, ".") ". ";
+}
+
+.policy__item_title {
+  font-weight: 500;
+  margin: 25px 0;
+}
+
+.policy__item_title:nth-child(1) {
+  margin: 0 0 25px;
+}
+
+.policy__item_title:nth-child(8) {
+  margin: 25px 0 0;
+}

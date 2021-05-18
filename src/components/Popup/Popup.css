@@ -1,0 +1,189 @@
+.popup__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.popup__title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+  color: #050505;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.popup__text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 29px;
+  color: #050505;
+  margin: 0;
+}
+
+.popup__text_last {
+  display: flex;
+  align-items: center;
+}
+
+.popup__text_margin {
+  margin-bottom: 25px;
+}
+
+.popup__text_weight-normal {
+  font-weight: 400;
+}
+
+.popup__text_pink {
+  font-weight: 400;
+  color: #DA125A; 
+}
+
+.popup__text_blue {
+  font-weight: 400;
+  color: #679AFD;
+}
+
+.popup__avatar {
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
+}
+
+.popup__phone-box {
+  display: flex;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #c7c9d9;
+}
+
+.popup__phone-box:hover {
+  border: 1px solid #DA125A;
+}
+
+.popup__phone-box:focus {
+  border: 1px solid #DA125A;
+}
+
+.popup__input-phone-box {
+  width: 100%;
+  height: 38px;
+  background: #fff;
+  border-radius: 0 4px 4px 0;
+  border-left: 1px solid #c7c9d9;
+  outline: none;
+}
+
+.popup__input-phone-box .special-label {
+  display: none;
+}
+
+.popup__input-phone {
+  width: 100% !important;
+  height: 38px !important;
+  border: none !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  padding: 0 0 0 50px;
+  outline: none !important;
+  border-radius: 0 4px 4px 0;
+}
+
+.popup__button-phone {
+  width: 40px;
+  height: 38px;
+  background: #fff;
+  border: none !important;
+}
+
+.popup__button-phone .country-list {
+  height: 150px;
+  width: 899px;
+}
+
+.popup__input-email {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-left: 1px solid #c7c9d9;
+  font-size: 14px;
+  line-height: 24px;
+  color: #303030;
+  overflow: hidden;
+}
+
+.popup__input-email .MuiOutlinedInput-root fieldset {
+  border: none;
+}
+
+.popup__input-email:focus-within label {
+  color: #DA125A;
+}
+
+.popup__input-email .MuiOutlinedInput-root:hover fieldset {
+  border: none;
+}
+
+.popup__input {
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+}
+
+.popup__input fieldset {
+  border: 1px solid #c7c9d9;
+}
+
+.popup__input label {
+  color: #8F90A6;
+}
+
+.popup__input:focus-within label {
+  color: #DA125A;
+}
+
+.popup__input .MuiInput-underline::after {
+  border-bottom-color: #DA125A;
+}
+
+.popup__input .MuiOutlinedInput-root:hover fieldset {
+  border: 1px solid #DA125A;
+}
+
+.popup__input .MuiOutlinedInput-root:focus-within fieldset {
+  border: 1px solid #DA125A;
+}
+
+.popup__checkbox-box .MuiTypography-body1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 13px;
+  letter-spacing: 0.00938em;
+  color: #686868;
+  opacity: 0.6;
+}
+
+.popup__label-politics {
+  cursor: pointer;
+}
+
+.popup__label-ring .MuiTypography-body1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 13px;
+  color: #DA125A;
+}
+
+@media screen and (max-width: 1125px) {
+  .popup__button-phone .country-list {
+    width: calc(100vw - 225px);
+  }
+}
