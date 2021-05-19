@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Avatar,
   Button,
@@ -174,19 +174,28 @@ function Popup({ open, close, openPolicy }) {
   const [state, setState] = useState({
     communication: 'call',
     phone: '',
+    country: {},
     email: '',
     policy: true,
     ring: true,
   });
-  const [phone, setPhone] = useState('');
+
   const handleChange = (e) => setState({ ...state, [e.target.name]: e.target.value });
   const handleChangeCheckbox = (e) => setState({ ...state, [e.target.name]: e.target.checked });
-
-  useEffect(() => setState({ ...state, phone }), [phone]);
+  const handleChangePhone = (phone, country) => {
+    setState({
+      ...state,
+      phone,
+      country: {
+        country: country.name,
+        dialCode: country.dialCode,
+      },
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    return fetch('https://eris.qexsystems.ru/connector.php', {
+    return fetch(`${window.location.href}connector.php`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -197,6 +206,8 @@ function Popup({ open, close, openPolicy }) {
           communication: state.communication,
           phone: state.phone,
           email: state.email,
+          country: state.country,
+          dialCode: state.dialCode,
         },
       }),
     }).then((res) => {
@@ -290,15 +301,11 @@ function Popup({ open, close, openPolicy }) {
           ) : (
             <PhoneInput
               country={'ru'}
-              className='input popup__input popup__input'
-              value={phone}
-              onChange={setPhone}
+              value={state.phone}
+              onChange={handleChangePhone}
               containerClass={'popup__input-phone-box'}
               inputClass={'popup__input-phone'}
               buttonClass={'popup__button-phone'}
-              inputProps={{
-                required: true,
-              }}
             />
           )}
         </Grid>
