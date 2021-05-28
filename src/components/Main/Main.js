@@ -6,7 +6,7 @@ import './Main.css';
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    background: `url(${phone}) 1135px 250px no-repeat, url(${computer}) 870px 90px no-repeat`,
+    background: `url(${phone}) 1350px 250px no-repeat, url(${computer}) 1075px 90px no-repeat`,
     minHeight: 'calc(100vh - 92px)',
     boxSizing: 'border-box',
     [theme.breakpoints.down('xs')]: {
