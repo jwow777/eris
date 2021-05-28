@@ -1,0 +1,16 @@
+.policy-page {
+  padding: 40px 40px;
+}
+
+.policy-page__container {
+  max-width: 1260px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .policy-page {
+    padding: 40px 20px;
+  }
+}

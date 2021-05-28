@@ -1,0 +1,14 @@
+.popup-scroll__title-box {
+  display: grid;
+  padding: 16px 24px;
+}
+
+.popup-policy__title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.035em;
+  margin: 0;
+}

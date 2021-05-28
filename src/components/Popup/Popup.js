@@ -23,7 +23,7 @@ import {
   WhatsApp,
 } from '@material-ui/icons';
 import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/plain.css';
+import 'react-phone-input-2/lib/material.css';
 import clsx from 'clsx';
 import avatar from '../../images/popup/avatar.jpg';
 import checked from '../../images/popup/checked.svg';
@@ -31,7 +31,7 @@ import ring from '../../images/popup/ring.svg';
 import checkedRing from '../../images/popup/checked-ring.svg';
 import './Popup.css';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     '& .MuiBackdrop-root': {
       backgroundColor: 'transparent',
@@ -42,12 +42,21 @@ const useStyles = makeStyles(() => ({
       borderRadius: 10,
       boxSizing: 'border-box',
       padding: '30px 45px',
+      [theme.breakpoints.down('xs')]: {
+        width: 'calc(100% - 32px)',
+        margin: 16,
+        padding: '30px',
+      },
     },
   },
   close: {
     position: 'absolute',
     top: 15,
     right: 15,
+    [theme.breakpoints.down('xs')]: {
+      top: 0,
+      right: 0,
+    },
   },
   form: {
     display: 'grid',
@@ -60,6 +69,12 @@ const useStyles = makeStyles(() => ({
     '& .MuiFormControlLabel-root.popup__label-ring': {
       width: 'max-content',
       margin: 'auto',
+      [theme.breakpoints.down('xs')]: {
+        width: '100%',
+        gridRow: 1,
+        display: 'flex',
+        justifyContent: 'center',
+      },
     },
     '& .MuiFormControl-root': {
       width: '100%',
@@ -79,6 +94,9 @@ const useStyles = makeStyles(() => ({
     boxSizing: 'border-box',
     border: 'none',
     borderRadius: '4px 0 0 4px',
+    [theme.breakpoints.down('xs')]: {
+      width: 64,
+    },
     '& .MuiSelect-selectMenu': {
       borderRadius: '4px 0 0 4px',
       whiteSpace: 'normal',
@@ -101,11 +119,12 @@ const useStyles = makeStyles(() => ({
   },
   button: {
     justifySelf: 'center',
-    width: 500,
-    height: 50,
+    width: '100%',
+    maxWidth: 500,
+    minHeight: 50,
     fontWeight: 500,
     fontSize: 20,
-    lineHeight: 24,
+    lineHeight: '24px',
     borderRadius: 5,
     backgroundColor: '#DA125A',
     fontFamily: '"Inter", sans-serif',
@@ -114,14 +133,18 @@ const useStyles = makeStyles(() => ({
     color: '#fff',
     textTransform: 'none',
     overflow: 'hidden',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      minHeight: 35,
+      fontSize: 13,
+      lineHeight: '16px',
+    },
     '&:hover': {
       backgroundColor: '#FF186B',
     },
     '&:disabled': {
-      backgroundColor: '#DA125A',
-    },
-    '& .MuiButton-label': {
-      height: '100%',
+      backgroundColor: '#ccc',
+      color: '#fff',
     },
   },
   checkbox: {
@@ -208,6 +231,8 @@ function Popup({ open, close, openPolicy }) {
           email: state.email,
           country: state.country,
           dialCode: state.dialCode,
+          policy: true,
+          ring: true,
         },
       }),
     }).then((res) => {

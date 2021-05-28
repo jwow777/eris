@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
-  Grid,
   MenuItem,
   MenuList,
   Popover,
@@ -20,49 +20,47 @@ function Header() {
     setAnchorElLang(null);
   };
   return (
-    <Grid
-      container
-      component='header'
-      justify='space-between'
-      alignItems='center'
-      className='header'
-    >
-      <div className='header__logo-box'>
-        <img src={logo} alt='Estraid Broker' className='header__logo'/>
-        <p className='header__title'>Eris</p>
+    <header className='header'>
+      <div className='header__container'>
+        <div className='header__logo-box'>
+          <Link to='/'>
+            <img src={logo} alt='Eris' className='header__logo'/>
+          </Link>
+          <p className='header__title'>Eris</p>
+        </div>
+        <div className='header__button-box'>
+          <a href='tel:+74954899696' className='link header__phone'>
+            +7 (495) 489-96-96
+          </a>
+          <img src={language} alt='language' className='header__lang-current' onClick={handleMenuLang}/>
+          <Popover
+            anchorEl={anchorElLang}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={openLang}
+            onClose={handleCloseLang}
+            className='header__lang-box'
+          >
+            <MenuList>
+              <MenuItem onClick={handleCloseLang} lang={ru}>
+                <img src={ru} alt='Русский' className='header__lang-image'/>
+                Русский
+              </MenuItem>
+              <MenuItem onClick={handleCloseLang} lang={us}>
+                <img src={us} alt='English' className='header__lang-image'/>
+                English
+              </MenuItem>
+            </MenuList>
+          </Popover>
+        </div>
       </div>
-      <div className='header__button-box'>
-        <a href='tel:+74954899696' className='link header__phone'>
-          +7 (495) 489-96-96
-        </a>
-        <img src={language} alt='language' className='header__lang-current' onClick={handleMenuLang}/>
-        <Popover
-          anchorEl={anchorElLang}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'right',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          open={openLang}
-          onClose={handleCloseLang}
-          className='header__lang-box'
-        >
-          <MenuList>
-            <MenuItem onClick={handleCloseLang} lang={ru}>
-              <img src={ru} alt='Русский' className='header__lang-image'/>
-              Русский
-            </MenuItem>
-            <MenuItem onClick={handleCloseLang} lang={us}>
-              <img src={us} alt='English' className='header__lang-image'/>
-              English
-            </MenuItem>
-          </MenuList>
-        </Popover>
-      </div>
-    </Grid>
+    </header>
   );
 }
 

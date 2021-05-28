@@ -1,6 +1,12 @@
-.header{
-  padding: 25px 40px;
-} 
+.header__container {
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 25px 60px;
+}
 
 .header__logo-box {
   display: grid;
@@ -8,12 +14,17 @@
   grid-column-gap: 10px;
 }
 
+.header__logo {
+  width: 40px;
+  height: 38px;
+}
+
 .header__title {
   grid-column: 2;
   grid-row: 1;
   position: relative;
   height: 34px;
-  font-family: 'Yantramanav', sans-serif;
+  font-family: "Yantramanav", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 40px;
@@ -27,32 +38,12 @@
   position: absolute;
   bottom: -20px;
   left: 2px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: "Yanone Kaffeesatz", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
   line-height: 88.1%;
-  color: #DA125A;
-}
-
-.menu {
-  display: grid;
-  grid-template-columns: repeat(4, max-content);
-  grid-column-gap: 50px;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 19px;
-  line-height: 23px;
-  letter-spacing: -0.035em;
-  color: #000;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu__item {
-  cursor: pointer;
+  color: #da125a;
 }
 
 .header__button-box {
@@ -64,7 +55,7 @@
 }
 
 .header__phone {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 19px;
   line-height: 23px;
@@ -88,4 +79,42 @@
 
 .header__lang-box .MuiPopover-paper {
   margin-top: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .header__container {
+    padding: 20px;
+  }
+
+  .header__logo-box {
+    grid-column-gap: 5px;
+  }
+
+  .header__logo {
+    height: 30px;
+  }
+
+  .header__lang-current {
+    width: 40px;
+    height: 25px;
+  }
+
+  .header__title {
+    height: auto;
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .header__title::after {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .header__button-box {
+    grid-template-columns: 1fr;
+  }
+
+  .header__phone {
+    display: none;
+  }
 }
