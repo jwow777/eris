@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down('xs')]: {
         width: 'calc(100% - 32px)',
         margin: 16,
-        padding: '30px',
+        padding: 20,
       },
     },
   },
@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 50,
     fontWeight: 500,
     fontSize: 20,
-    lineHeight: '24px',
+    lineHeight: 1.2,
     borderRadius: 5,
     backgroundColor: '#DA125A',
     fontFamily: '"Inter", sans-serif',
@@ -137,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       minHeight: 35,
       fontSize: 13,
-      lineHeight: '16px',
+      lineHeight: 1.2,
     },
     '&:hover': {
       backgroundColor: '#FF186B',
@@ -379,7 +379,7 @@ function Popup({ open, close, openPolicy }) {
           type='submit'
           variant='contained'
           className={classes.button}
-          disabled={!(state.email || state.phone) || !(state.policy && state.ring)}
+          disabled={!(state.email || state.phone) || !state.policy}
         >
           Получить доступ к закрытой beta-версии
         </Button>

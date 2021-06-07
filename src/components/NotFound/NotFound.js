@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     fontStyle: 'normal',
     fontWeight: 600,
     fontSize: 30,
-    lineHeight: '36px',
+    lineHeight: 1.2,
     color: '#fff',
     marginTop: 30,
     textTransform: 'none',
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       width: 150,
       fontWeight: 500,
       fontSize: 25,
-      lineHeight: '30px',
+      lineHeight: 1.2,
       marginTop: 0,
     },
     '&:hover': {

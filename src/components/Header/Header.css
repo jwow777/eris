@@ -11,10 +11,12 @@
 .header__logo-box {
   display: grid;
   grid-template-columns: repeat(2, max-content);
+  align-items: center;
   grid-column-gap: 10px;
 }
 
 .header__logo {
+  display: block;
   width: 40px;
   height: 38px;
 }
@@ -42,7 +44,7 @@
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
-  line-height: 88.1%;
+  line-height: 85%;
   color: #da125a;
 }
 
@@ -55,12 +57,18 @@
 }
 
 .header__phone {
+  display: flex;
+  align-items: center;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 19px;
-  line-height: 23px;
+  line-height: 1.2;
   color: #000;
   text-decoration: none;
+}
+
+.header__phone-text {
+  margin: 0;
 }
 
 .header__lang-current {
@@ -81,6 +89,10 @@
   margin-top: 15px;
 }
 
+.header__menu-button-mobile.MuiIconButton-root {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .header__container {
     padding: 20px;
@@ -99,22 +111,55 @@
     height: 25px;
   }
 
+  .header__lang-current-swipe-box {
+    width: 37px;
+    height: 23px;
+  }
+
+  .header__lang-swipe-box {
+    display: grid;
+    grid-template-columns: repeat(2,max-content);
+    align-items: center;
+    grid-gap: 5px;
+  }
+
+  .header__lang-text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #1C1C1C;
+    margin: 0;
+  }
+
   .header__title {
     height: auto;
     font-size: 30px;
-    line-height: 30px;
+    line-height: 1;
   }
 
   .header__title::after {
     font-size: 20px;
-    line-height: 24px;
+    line-height: 1.2;
   }
 
   .header__button-box {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, max-content);
+    grid-column-gap: 12px;
   }
 
-  .header__phone {
+  .header__phone-text {
     display: none;
+  }
+
+  .header__menu-button-mobile.MuiIconButton-root {
+    display: block;
+    margin: -12px;
+  }
+
+  .header__menu-button-mobile.MuiIconButton-root .MuiSvgIcon-root {
+    width: 40px;
+    height: 40px;
   }
 }
