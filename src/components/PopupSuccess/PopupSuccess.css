@@ -1,0 +1,50 @@
+.popup__success .MuiBackdrop-root {
+  background-color: transparent;
+}
+
+.popup__success .popup__close {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.popup__success .MuiDialog-paperWidthSm {
+  max-width: 350px;
+  min-height: 180px;
+  width: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 20px;
+}
+
+.popup__success-container {
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  grid-gap: 15px;
+}
+
+.popup__success-title{
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+}
+
+.popup__success-subtitle{
+  max-width: 270px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+}

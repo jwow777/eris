@@ -8,6 +8,7 @@ import Popup from '../Popup/Popup';
 import './App.css';
 import NotFound from '../NotFound/NotFound';
 import PolicyPage from '../PolicyPage/PolicyPage';
+import PopupSuccess from '../PopupSuccess/PopupSuccess';
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -18,6 +19,10 @@ function App() {
   const handleClickOpenPolicy = () => () => setOpenPolicy(true);
   const handleClosePolicy = () => setOpenPolicy(false);
 
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const handleClickOpenSuccess = () => setOpenSuccess(true);
+  const handleCloseSuccess = () => setOpenSuccess(false);
+
   return (
     <>
       <Switch>
@@ -25,8 +30,15 @@ function App() {
           <Header openPopup={handleClickOpenPopup}/>
           <Main openPopup={handleClickOpenPopup} />
           <Footer />
-          <Popup open={openPopup} close={handleClosePopup} openPolicy={handleClickOpenPolicy} />
+          <Popup
+            open={openPopup}
+            close={handleClosePopup}
+            openPolicy={handleClickOpenPolicy}
+            openSuccess={handleClickOpenSuccess}
+            closeSuccess={handleCloseSuccess}
+          />
           <PopupPolicy open={openPolicy} close={handleClosePolicy} />
+          <PopupSuccess open={openSuccess} close={handleCloseSuccess} />
         </Route>
         <Route path='/policy'>
           <Header />

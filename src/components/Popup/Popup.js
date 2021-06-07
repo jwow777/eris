@@ -193,7 +193,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Popup({ open, close, openPolicy }) {
+function Popup({
+  open,
+  close,
+  openPolicy,
+  openSuccess,
+  closeSuccess,
+}) {
   const [state, setState] = useState({
     communication: 'call',
     phone: '',
@@ -237,6 +243,8 @@ function Popup({ open, close, openPolicy }) {
       }),
     }).then((res) => {
       if (res.ok) {
+        openSuccess();
+        setTimeout(() => closeSuccess(), 5000);
         return res.json();
       }
       // eslint-disable-next-line prefer-promise-reject-errors
