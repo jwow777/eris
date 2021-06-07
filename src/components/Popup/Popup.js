@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down('xs')]: {
         width: 'calc(100% - 32px)',
         margin: 16,
-        padding: 20,
+        padding: 30,
       },
     },
   },
