@@ -48,12 +48,12 @@ function PopupPolicy({ open, close }) {
       className={classes.container}
     >
       <div className='popup-scroll__title-box'>
-        <h2 className='popup-policy__title'>
-          Политика в отношении обработки персональных данных
-        </h2>
         <IconButton onClick={close} className={classes.close}>
           <Clear />
         </IconButton>
+        <h2 className='popup-policy__title'>
+          Политика в отношении обработки персональных данных
+        </h2>
       </div>
       <DialogContent>
         <Policy/>

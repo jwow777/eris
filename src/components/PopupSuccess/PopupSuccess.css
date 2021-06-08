@@ -1,17 +1,17 @@
-.popup__success .MuiBackdrop-root {
+.MuiDialog-root .MuiBackdrop-root {
   background-color: transparent;
 }
 
-.popup__success .popup__close {
+.MuiDialog-root .popup__close {
   position: absolute !important;
   top: 0;
   right: 0;
   z-index: 1;
 }
 
-.popup__success .MuiDialog-paperWidthSm {
+.MuiDialog-root .MuiDialog-paperWidthSm {
   max-width: 350px;
-  min-height: 180px;
+  min-height: 220px;
   width: calc(100% - 40px);
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@
   grid-gap: 15px;
 }
 
-.popup__success-title{
+.popup__success-title {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -38,7 +38,7 @@
   margin: 0;
 }
 
-.popup__success-subtitle{
+.popup__success-subtitle {
   max-width: 270px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -47,4 +47,4 @@
   line-height: 1.2;
   text-align: center;
   margin: 0;
-}
+} 
