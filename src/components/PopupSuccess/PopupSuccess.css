@@ -19,10 +19,10 @@
   border-radius: 10px;
   box-sizing: border-box;
   margin: 20px;
+  padding: 20px;
 }
 
 .popup__success-container {
-  height: 100%;
   display: grid;
   justify-items: center;
   grid-gap: 15px;
